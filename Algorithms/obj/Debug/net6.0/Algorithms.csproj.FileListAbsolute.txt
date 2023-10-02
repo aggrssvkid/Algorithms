@@ -1,0 +1,11 @@
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\bin\Debug\net6.0\Algorithms.deps.json
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\bin\Debug\net6.0\Algorithms.dll
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\bin\Debug\net6.0\Algorithms.pdb
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\Algorithms.GeneratedMSBuildEditorConfig.editorconfig
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\Algorithms.AssemblyInfoInputs.cache
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\Algorithms.AssemblyInfo.cs
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\Algorithms.csproj.CoreCompileInputs.cache
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\Algorithms.dll
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\refint\Algorithms.dll
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\Algorithms.pdb
+X:\VS2022_Projects\MyProjects\Algorithms\Algorithms\obj\Debug\net6.0\ref\Algorithms.dll
