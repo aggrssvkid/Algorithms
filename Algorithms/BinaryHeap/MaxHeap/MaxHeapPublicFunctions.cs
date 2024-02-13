@@ -23,7 +23,7 @@ namespace Algorithms.BinaryHeap.MaxHeap
             int last = priorityQueue.Count - 1;
             CommonFunc.Swap(priorityQueue, 0, last);
             priorityQueue.RemoveAt(last);
-            SiftUp(priorityQueue);
+            SiftDown(priorityQueue);
             return res;
         }
 

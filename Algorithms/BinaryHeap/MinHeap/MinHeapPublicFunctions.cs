@@ -14,15 +14,23 @@ namespace Algorithms.BinaryHeap.MinHeap
             priorityQueue.Add(element);
             SiftUp(priorityQueue, comparer);
         }
-        // Достаем элемент из кучи. При этом, сам элемент удаляется из кучи, в свойство макс. кучи сохраняется
+        // Достаем элемент из кучи. При этом, сам элемент удаляется из кучи, а свойство мин. кучи сохраняется
         public static T ExtractElement<T>(List<T> priorityQueue, IComparer<T> comparer)
         {
             T res = priorityQueue[0];
             int last = priorityQueue.Count - 1;
             Swap(priorityQueue, 0, last);
             priorityQueue.RemoveAt(last);
-            SiftUp(priorityQueue, comparer);
+            SiftDown(priorityQueue, comparer);
             return res;
+        }
+        public static void MakeMinHeap<T>(List<T> arr, IComparer<T> comparer)
+        {
+            if (arr.Count <= 1)
+                return;
+            int n = arr.Count;
+            for (int i = n / 2; i >= 0; i--)
+                SiftDown(arr, n, i, comparer);
         }
     }
 }

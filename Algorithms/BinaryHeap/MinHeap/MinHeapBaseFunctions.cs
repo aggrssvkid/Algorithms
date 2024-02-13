@@ -26,11 +26,23 @@ namespace Algorithms.BinaryHeap.MinHeap
 
         // Просеивание последнего элемента массива вниз, дабы он занял свое место в куче с сохранением
         // основного свойства Мин. кучи
-        private static void SiftDown<T>(List<T> priorityQueue, IComparer<T> comparer)
+        public static void SiftDown<T>(List<T> priorityQueue, IComparer<T> comparer)
         {
             int i = 0;
             int minIdx = ChooseMinIdx(priorityQueue, i, comparer);
             while (minIdx < priorityQueue.Count && comparer.Compare(priorityQueue[i], priorityQueue[minIdx]) > 0)
+            {
+                Swap(priorityQueue, i, minIdx);
+                i = minIdx;
+                minIdx = ChooseMinIdx(priorityQueue, i, comparer);
+            }
+        }
+
+        private static void SiftDown<T>(List<T> priorityQueue, int priorityQueueSize, int idxElement, IComparer<T> comparer)
+        {
+            int i = idxElement;
+            int minIdx = ChooseMinIdx(priorityQueue, i, comparer);
+            while (minIdx < priorityQueueSize && comparer.Compare(priorityQueue[i], priorityQueue[minIdx]) > 0)
             {
                 Swap(priorityQueue, i, minIdx);
                 i = minIdx;

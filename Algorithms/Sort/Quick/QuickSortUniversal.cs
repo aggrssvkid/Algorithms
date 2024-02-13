@@ -24,7 +24,7 @@ namespace Algorithms.Sort.QuickSort
             // pust pivot - mediana, dlya togo chtobi algoritm ne bil medlennee (n * log(n))
             // pivotLeftIdx and pivotRightIdx - indexi poslednih povtornih elementov sprava i sleva ot pivota.
             // Eto nado dlya sluchaya, esli mnogo povtornih elementov.
-            int pivotRightIdx = arr.Count / 2;
+            int pivotRightIdx = arr.Count / 2; // Also We can use class "Random" for generate random pivotIdx
             int pivotLeftIdx = pivotRightIdx;
             int pivot = arr[pivotRightIdx];
             int left = 0;
