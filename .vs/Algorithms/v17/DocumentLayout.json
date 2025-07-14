@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|x:\\vs2022_projects\\myprojects\\algorithms\\algorithms\\sort\\mergesort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\sort\\mergesort.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|x:\\vs2022_projects\\myprojects\\algorithms\\algorithms\\sort\\quick\\quicksortuniversal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\sort\\quick\\quicksortuniversal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|x:\\vs2022_projects\\myprojects\\algorithms\\algorithms\\sort\\quick\\quicksortpivotzero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\sort\\quick\\quicksortpivotzero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|x:\\vs2022_projects\\myprojects\\algorithms\\algorithms\\somealgorithms\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\somealgorithms\\search.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|x:\\vs2022_projects\\myprojects\\algorithms\\algorithms\\commonfunctions\\commonfunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D13C33D-60D9-4EE5-A984-F21A733087BA}|Algorithms\\Algorithms.csproj|solutionrelative:algorithms\\commonfunctions\\commonfunc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QuickSortPivotZero.cs",
+              "DocumentMoniker": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\Sort\\Quick\\QuickSortPivotZero.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Sort\\Quick\\QuickSortPivotZero.cs",
+              "ToolTip": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\Sort\\Quick\\QuickSortPivotZero.cs",
+              "RelativeToolTip": "Algorithms\\Sort\\Quick\\QuickSortPivotZero.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAuwCUAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T14:33:08.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuickSortUniversal.cs",
+              "DocumentMoniker": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\Sort\\Quick\\QuickSortUniversal.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Sort\\Quick\\QuickSortUniversal.cs",
+              "ToolTip": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\Sort\\Quick\\QuickSortUniversal.cs",
+              "RelativeToolTip": "Algorithms\\Sort\\Quick\\QuickSortUniversal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T14:19:06.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CommonFunc.cs",
+              "DocumentMoniker": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\CommonFunctions\\CommonFunc.cs",
+              "RelativeDocumentMoniker": "Algorithms\\CommonFunctions\\CommonFunc.cs",
+              "ToolTip": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\CommonFunctions\\CommonFunc.cs",
+              "RelativeToolTip": "Algorithms\\CommonFunctions\\CommonFunc.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T09:59:33.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MergeSort.cs",
+              "DocumentMoniker": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\Sort\\MergeSort.cs",
+              "RelativeDocumentMoniker": "Algorithms\\Sort\\MergeSort.cs",
+              "ToolTip": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\Sort\\MergeSort.cs",
+              "RelativeToolTip": "Algorithms\\Sort\\MergeSort.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwFsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T09:33:53.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Search.cs",
+              "DocumentMoniker": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\SomeAlgorithms\\Search.cs",
+              "RelativeDocumentMoniker": "Algorithms\\SomeAlgorithms\\Search.cs",
+              "ToolTip": "X:\\VS2022_Projects\\MyProjects\\Algorithms\\Algorithms\\SomeAlgorithms\\Search.cs",
+              "RelativeToolTip": "Algorithms\\SomeAlgorithms\\Search.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAwwEgAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-08T09:23:38.227Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

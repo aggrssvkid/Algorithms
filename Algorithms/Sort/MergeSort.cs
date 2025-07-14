@@ -8,64 +8,87 @@ namespace Algorithms.Sort
 {
     public partial class Sort
     {
-        public static int[] MergeSort(int[] arr)
+        /// <summary>
+        /// Основной метод для вызова сортировки (сделан ии)
+        /// </summary>
+        /// <param name="array">Массив для сортировки</param>
+        public static void MergeSort(int[] array)
         {
-            // Делим массив пополам, пока не получим одноэлементные массивы на последнем уровне рекурсии. После этого, начинаем
-            // Лепить уже отсортированный массив, вызыая Merge для каждой из половинок.
-            if (arr.Length <= 1)
-                return arr;
-            int m = arr.Length / 2;
-            var left = arr.Skip(0).Take(m).ToArray();
-            var right = arr.Skip(m).Take(arr.Length % 2 == 0 ? m : m + 1).ToArray();
-            return Merge(MergeSort(left), MergeSort(right));
+            if (array == null || array.Length <= 1)
+                return;
+
+            int[] tempArray = new int[array.Length];
+            MergeSort(array, tempArray, 0, array.Length - 1);
         }
 
-        public static int[] Merge(int[] left, int[] right)
+        /// <summary>
+        /// Рекурсивный метод сортировки слиянием
+        /// </summary>
+        /// <param name="array">Исходный массив</param>
+        /// <param name="tempArray">Временный массив для слияния</param>
+        /// <param name="left">Левый индекс подмассива</param>
+        /// <param name="right">Правый индекс подмассива</param>
+        private static void MergeSort(int[] array, int[] tempArray, int left, int right)
         {
-            int len = left.Length + right.Length;
-            int[] newArr = new int[len];
-            int currentLeft = 0, currentRight = 0, i = 0;
-
-            // Начинаем сравнивать элементы из 2-х отсортированных массивов попарно. Меньший кладем в новый массив и сдвигаем указатель
-            // Массива, откуда взяли этот меньший элемент на следующий элемент. Делаем так до тех пор, пока в каком-нибудь массиве
-            // не закончатся элементы. Оставшиеся элементы другого массива просто копируем в конец нового полученного массива.
-            while (currentLeft < left.Length && currentRight < right.Length)
+            if (left < right)
             {
-                if (left[currentLeft] <= right[currentRight])
+                int middle = (left + right) / 2;
+
+                // Рекурсивно сортируем левую и правую половины
+                MergeSort(array, tempArray, left, middle);
+                MergeSort(array, tempArray, middle + 1, right);
+
+                // Сливаем отсортированные половины
+                Merge(array, tempArray, left, middle, right);
+            }
+        }
+
+        /// <summary>
+        /// Метод для слияния двух отсортированных подмассивов
+        /// </summary>
+        /// <param name="array">Исходный массив</param>
+        /// <param name="tempArray">Временный массив</param>
+        /// <param name="left">Левый индекс</param>
+        /// <param name="middle">Средний индекс</param>
+        /// <param name="right">Правый индекс</param>
+        private static void Merge(int[] array, int[] tempArray, int left, int middle, int right)
+        {
+            int leftStart = left;
+            int leftEnd = middle;
+            int rightStart = middle + 1;
+            int rightEnd = right;
+            int tempIndex = left;
+
+            // Слияние пока есть элементы в обоих подмассивах
+            while (leftStart <= leftEnd && rightStart <= rightEnd)
+            {
+                if (array[leftStart] <= array[rightStart])
                 {
-                    newArr[i] = left[currentLeft];
-                    currentLeft++;
+                    tempArray[tempIndex++] = array[leftStart++];
                 }
                 else
                 {
-                    newArr[i] = right[currentRight];
-                    currentRight++;
-                }
-                i++;
-            }
-
-            // Собственно говоря, далее и идет прповерка на то, в каком массиве еще остались элементы. Оставшиеся элементы
-            // копируем в новый массив.
-            if (currentLeft == left.Length && currentRight != right.Length)
-            {
-                while (currentRight < right.Length)
-                {
-                    newArr[i] = right[currentRight];
-                    currentRight++;
-                    i++;
-                }
-            }
-            else if (currentRight == right.Length && currentLeft != left.Length)
-            {
-                while (currentLeft < left.Length)
-                {
-                    newArr[i] = left[currentLeft];
-                    currentLeft++;
-                    i++;
+                    tempArray[tempIndex++] = array[rightStart++];
                 }
             }
 
-            return newArr;
+            // Копируем оставшиеся элементы левого подмассива
+            while (leftStart <= leftEnd)
+            {
+                tempArray[tempIndex++] = array[leftStart++];
+            }
+
+            // Копируем оставшиеся элементы правого подмассива
+            while (rightStart <= rightEnd)
+            {
+                tempArray[tempIndex++] = array[rightStart++];
+            }
+
+            // Копируем отсортированные элементы обратно в исходный массив
+            for (int i = left; i <= right; i++)
+            {
+                array[i] = tempArray[i];
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Algorithms.Stringology
 
         private readonly long p = 1000000007; // constanta dlya togo, chtobi v "int" znacheniya pomewalis
 
-        private readonly int x = 263; // osnovanie v polynome. chem bolshe raznih simvolov, tem bolshe nado brat "x"
+        private readonly int x = 256; // osnovanie v polynome. chem bolshe raznih simvolov, tem bolshe nado brat "x"
 
         private static int[] pows; // zaranee schitaem stepeni "x" polynoma
 
@@ -57,18 +57,19 @@ namespace Algorithms.Stringology
                 hashTable[i] = -1;
         }
 
-        public List<int> GetSubStrings(string pattern)
+        // esli nahsli pervoe sovpadenie to vernem ego
+        public List<int> GetAllSubStrings(string pattern, string text) 
         {
-            List<int> startIndexes = new List<int>(); // zdes vse nachala sovpad s pattern
+            List<int> answer = new List<int>();
             if (pattern == null || pattern == "")
-                return startIndexes;
+                return answer;
             var patternHash = GetHash(pattern);
             for (int i = 0; i <= text.Length - patternSize; i++)
             {
                 if (patternHash == hashTable[i])
-                    startIndexes.Add(i);
+                    answer.Add(i);
             }
-            return startIndexes;
+            return answer;
         }
 
         // Hash-Function sobstvennoy personi

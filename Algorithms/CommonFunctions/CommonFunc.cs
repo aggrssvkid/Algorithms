@@ -8,15 +8,7 @@ namespace Algorithms.CommonFunctions
 {
     internal class CommonFunc
     {
-        // Стандартный свап расположения двух элементов в массиве друг с другом
-        internal static void Swap<T>(List<T> arr, int idx1, int idx2)
-        {
-            var tmp = arr[idx1];
-            arr[idx1] = arr[idx2];
-            arr[idx2] = tmp;
-        }
-
-        internal static void Swap<T>(ArraySegment<T> arr, int idx1, int idx2)
+        internal static void Swap<T>(T[] arr, int idx1, int idx2)
         {
             var tmp = arr[idx1];
             arr[idx1] = arr[idx2];

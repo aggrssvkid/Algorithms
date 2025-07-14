@@ -9,24 +9,24 @@ namespace Algorithms.Sort.QuickSort
 {
     public partial class QuickSort
     {
-        public static void QuickSortUniversalPivotZero(ArraySegment<int> arr)
+        public static void QuickSortUniversalPivotZero(int[] arr)
         {
-            if (arr.Count <= 1)
+            if (arr.Length <= 1)
                 return;
             int same;
             int pivot = PartitionPivotZero(arr, out same);
-            QuickSortUniversalPivotZero(arr.Slice(0, pivot));
-            QuickSortUniversalPivotZero(arr.Slice(pivot + same + 1));
+            QuickSortUniversalPivotZero(arr[0..pivot]);
+            QuickSortUniversalPivotZero(arr[(pivot + same + 1)..]);
         }
 
-        private static int PartitionPivotZero(ArraySegment<int> arr, out int same)
+        private static int PartitionPivotZero(int[] arr, out int same)
         {
             int pivotEl = arr[0];
             int next = 1;
             int hight = 1;
             same = 0;
 
-            while (next < arr.Count)
+            while (next < arr.Length)
             {
                 if (arr[next] == pivotEl)
                 {

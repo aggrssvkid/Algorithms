@@ -5,97 +5,71 @@ using System.Text;
 using System.Threading.Tasks;
 using Algorithms.CommonFunctions;
 
+// esli elementi povtoryayutsya
 namespace Algorithms.Sort.QuickSort
 {
-    public partial class QuickSort
+    public class QuickSortUniversal
     {
-        public static void QuickSortUniversal(ArraySegment<int> arr)
+        public static void Sort(int[] array)
         {
-            if (arr.Count <= 1)
+            if (array == null || array.Length <= 1)
                 return;
-            int same; // povtori, t.e elementi ravnie pivotu.
-            int pivot = Partition(arr, out same);
-            QuickSortUniversal(arr.Slice(0, pivot));
-            QuickSortUniversal(arr.Slice(pivot + same + 1));
+
+            Sort(array, 0, array.Length - 1);
         }
 
-        static int Partition(ArraySegment<int> arr, out int same)
+        private static void Sort(int[] array, int left, int right)
         {
-            // pust pivot - mediana, dlya togo chtobi algoritm ne bil medlennee (n * log(n))
-            // pivotLeftIdx and pivotRightIdx - indexi poslednih povtornih elementov sprava i sleva ot pivota.
-            // Eto nado dlya sluchaya, esli mnogo povtornih elementov.
-            int pivotRightIdx = arr.Count / 2; // Also We can use class "Random" for generate random pivotIdx
-            int pivotLeftIdx = pivotRightIdx;
-            int pivot = arr[pivotRightIdx];
-            int left = 0;
-            int right = arr.Count - 1;
-            same = 0;
+            if (left >= right) return;
 
-            while (left < pivotLeftIdx || right > pivotRightIdx)
+            // Возвращает границы: 
+            // - слева элементы < pivot
+            // - в середине элементы == pivot
+            // - справа элементы > pivot
+            (int lessThanEnd, int greaterThanStart) = Partition(array, left, right);
+
+            Sort(array, left, lessThanEnd);     // Сортируем элементы < pivot
+            Sort(array, greaterThanStart, right); // Сортируем элементы > pivot
+        }
+
+        private static (int lessThanEnd, int greaterThanStart) Partition(int[] array, int left, int right)
+        {
+            int pivot = array[left + (right - left) / 2]; // Медиана (можно выбрать первый/последний/рандомный)
+
+            int less = left;       // конец зоны "< pivot"
+            int equal = left;      // конец зоны "== pivot"
+            int greater = right;   // начало зоны "> pivot"
+
+            while (equal <= greater)
             {
-                // Propuskrm vse elementi, kotorie itak stoyat na svoih mestah
-                while (arr[left] < pivot)
-                    left++;
-                while (arr[right] > pivot)
-                    right--;
-
-                // Nashli podozritelnie elementi dlya swapa, menyaem. Vsego vozmozhno 4 kombinacii. Rassmotrim kazhduyu po otdelnosti.
-                // 4 if.
-                if (arr[left] > pivot && arr[right] < pivot)
+                if (array[equal] < pivot)
                 {
-                    CommonFunc.Swap(arr, right, left);
-                    left++;
-                    right--;
+                    Swap(array, equal, less);
+                    less++;
+                    equal++;
                 }
-                else if (arr[left] > pivot && arr[right] == pivot)
+                else if (array[equal] > pivot)
                 {
-                    CommonFunc.Swap(arr, left, right);
-                    CommonFunc.Swap(arr, left, pivotLeftIdx - 1);
-                    if (right != pivotRightIdx)
-                    {
-                        pivotLeftIdx--;
-                        same++;
-                    }
-                    else if (right == pivotRightIdx)
-                    {
-                        pivotLeftIdx--;
-                        pivotRightIdx--;
-                    }
-                    right--;
+                    Swap(array, equal, greater);
+                    greater--;
                 }
-                else if (arr[right] < pivot && arr[left] == pivot)
+                else
                 {
-                    CommonFunc.Swap(arr, left, right);
-                    CommonFunc.Swap(arr, right, pivotRightIdx + 1);
-                    if (left != pivotLeftIdx)
-                    {
-                        pivotRightIdx++;
-                        same++;
-                    }
-                    else if (left == pivotLeftIdx)
-                    {
-                        pivotLeftIdx++;
-                        pivotRightIdx++;
-                    }
-                    left++;
-                }
-                else if (arr[right] == pivot && arr[left] == pivot)
-                {
-                    if (left != pivotLeftIdx)
-                    {
-                        CommonFunc.Swap(arr, left, pivotLeftIdx - 1);
-                        same++;
-                        pivotLeftIdx--;
-                    }
-                    if (right != pivotRightIdx)
-                    {
-                        CommonFunc.Swap(arr, right, pivotRightIdx + 1);
-                        same++;
-                        pivotRightIdx++;
-                    }
+                    equal++;
                 }
             }
-            return pivotLeftIdx;
+
+            // Теперь массив разбит на:
+            // - [left..less-1]   — элементы < pivot
+            // - [less..greater]  — элементы == pivot
+            // - [greater+1..right] — элементы > pivot
+            return (less - 1, greater + 1);
+        }
+
+        private static void Swap<T>(T[] array, int i, int j)
+        {
+
+            (array[i], array[j]) = (array[j], array[i]);
         }
     }
 }
